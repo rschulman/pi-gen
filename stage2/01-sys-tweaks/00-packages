@@ -1,10 +1,7 @@
 ssh locales less fbset sudo psmisc strace module-init-tools ed ncdu crda
 console-setup keyboard-configuration debconf-utils parted unzip
-build-essential manpages-dev python bash-completion gdb pkg-config
-python-rpi.gpio v4l-utils
+build-essential manpages-dev python3 bash-completion gdb pkg-config
 avahi-daemon
-lua5.1
-luajit
 hardlink ca-certificates curl
 fake-hwclock ntp nfs-common usbutils
 libraspberrypi-dev libraspberrypi-doc libfreetype6-dev
