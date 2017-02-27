@@ -1,0 +1,39 @@
+# Name Settings
+myhostname = mail.{{domain}}
+myorigin = {{domain}}
+mydomain = {{domain}}
+mynetworks = 127.0.0.1
+
+# Incoming Settings
+smtpd_banner = $myhostname
+relay_domains = {{domain}}
+proxy_interfaces = {{domain}}
+smtpd_relay_restrictions =
+    permit_mynetworks
+    permit_sasl_authenticated
+    reject_unauth_destination
+smtpd_tls_cert_file = /etc/letsencrypt/mail.{{domain}}/fullchain.pem
+smtpd_tls_key_file = /etc/letsencrypt/mail.{{domain}}/privkey.pem
+alias_maps = ldap:/etc/postfix/ldap-aliases.cf
+
+## SASL Auth
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_type = dovecot
+smtpd_sasl_path = private/auth
+smtpd_sasl_security_options = noanonymous
+smtpd_tls_auth_only = yes
+
+# Outgoing Settings
+smtp_sasl_auth_enable = yes
+smtp_tls_security_level = encrypt
+smtp_sasl_tls_security_options = noanonymous
+{{postfix_relayhost}}
+
+# Denial Of Service Mitigation
+default_process_limit = 100
+smtpd_client_connection_count_limit = 10
+smtpd_client_connection_rate_limit = 30
+queue_minfree = 20971520
+header_size_limit = 51200
+message_size_limit = 10485760
+smtpd_recipient_limit = 100
