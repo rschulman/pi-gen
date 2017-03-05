@@ -1,4 +1,4 @@
-openldap openldap-utils
+slapd openldap-utils
 nginx php5-fpm php5
 dovecot-imapd dovecot-lmtpd dovecot-sieve
 git-core rpi-update
