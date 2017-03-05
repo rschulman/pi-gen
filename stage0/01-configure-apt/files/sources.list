@@ -3,3 +3,5 @@ deb http://mirrordirector.raspbian.org/raspbian/ jessie main contrib non-free rp
 #deb-src http://archive.raspbian.org/raspbian/ jessie main contrib non-free rpi
 # Also setup backports
 deb http://ftp.debian.org/debian jessie-backports main
+# Matrix homeserver deb
+deb http://matrix.org/packages/debian/ jessie main
