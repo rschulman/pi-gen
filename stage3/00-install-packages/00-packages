@@ -1,3 +1,4 @@
+rfkill hostapd hostapd-utils iw dnsmasq
 slapd openldap-utils
 nginx php5-fpm php5
 dovecot-imapd dovecot-lmtpd dovecot-sieve dovecot-managedsieve dovecot-ldap
