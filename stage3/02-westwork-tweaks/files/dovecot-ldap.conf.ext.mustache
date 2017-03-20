@@ -1,0 +1,16 @@
+# Configuration for LDAP server
+
+uris = ldap://localhost 
+
+auth_bind = yes
+
+ldap_version = 3
+
+base = cn=users,dc={{host}},dc={{tld}}
+scope = subtree
+deref = never
+user_filter	= (&(name=%u)(objectClass=person))
+pass_filter	= (&(name=%u)(objectClass=person))
+auth_bind_userdn = cn=%u,cn=users,dn={{host}},dc={{tld}}
+pass_attrs      = userPassword=password
+default_pass_scheme = CRYPT

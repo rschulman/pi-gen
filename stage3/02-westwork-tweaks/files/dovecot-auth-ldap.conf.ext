@@ -1,0 +1,11 @@
+# Password database setup
+passdb {
+    driver = ldap
+    args = /etc/dovecot/dovecot-ldap.conf.ext
+}
+
+# User existence check
+userdb {
+    driver = static
+    args = 
+}
