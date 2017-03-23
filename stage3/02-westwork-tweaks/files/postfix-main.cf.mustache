@@ -14,7 +14,7 @@ smtpd_relay_restrictions =
     reject_unauth_destination
 smtpd_tls_cert_file = /data/conf/letsencrypt/live/mail.{{host}}.{{tld}}/fullchain.pem
 smtpd_tls_key_file = /data/conf/letsencrypt/live/mail.{{host}}.{{tld}}/privkey.pem
-alias_maps = ldap:/etc/postfix/ldap-aliases.cf
+alias_maps = ldap:/data/conf/postfix/ldap-aliases.cf
 
 ## SASL Auth
 smtpd_sasl_auth_enable = yes
