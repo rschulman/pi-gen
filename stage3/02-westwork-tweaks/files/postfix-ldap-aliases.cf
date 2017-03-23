@@ -1,0 +1,2 @@
+server_host = localhost
+search_base = dc={{host}}, dc={{tld}}
