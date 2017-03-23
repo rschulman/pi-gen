@@ -6,6 +6,6 @@ passdb {
 
 # User existence check
 userdb {
-    driver = static
-    args = 
+    driver = ldap
+    args = /data/conf/dovecot/dovecot-ldap.conf.ext
 }
