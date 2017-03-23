@@ -1,19 +1,19 @@
 # Name Settings
-myhostname = mail.{{domain}}
-myorigin = {{domain}}
-mydomain = {{domain}}
+myhostname = mail.{{host}}.{{tld}}
+myorigin = {{host}}.{{tld}}
+mydomain = {{host}}.{{tld}}
 mynetworks = 127.0.0.1
 
 # Incoming Settings
 smtpd_banner = $myhostname
-relay_domains = {{domain}}
-proxy_interfaces = {{domain}}
+relay_domains = {{host}}.{{tld}}
+proxy_interfaces = {{host}}.{{tld}}
 smtpd_relay_restrictions =
     permit_mynetworks
     permit_sasl_authenticated
     reject_unauth_destination
-smtpd_tls_cert_file = /etc/letsencrypt/mail.{{domain}}/fullchain.pem
-smtpd_tls_key_file = /etc/letsencrypt/mail.{{domain}}/privkey.pem
+smtpd_tls_cert_file = /data/conf/letsencrypt/live/mail.{{host}}.{{tld}}/fullchain.pem
+smtpd_tls_key_file = /data/conf/letsencrypt/live/mail.{{host}}.{{tld}}/privkey.pem
 alias_maps = ldap:/etc/postfix/ldap-aliases.cf
 
 ## SASL Auth
