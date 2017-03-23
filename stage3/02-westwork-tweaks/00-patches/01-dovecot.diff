@@ -1,0 +1,13 @@
+Index: jessie-stage3/rootfs/lib/systemd/system/dovecot.service
+===================================================================
+--- jessie-stage3.orig/rootfs/lib/systemd/system/dovecot.service	
++++ jessie-stage3/rootfs/lib/systemd/system/dovecot.service	
+@@ -24,7 +24,7 @@
+ 
+ [Service]
+ Type=forking
+-ExecStart=/usr/sbin/dovecot
++ExecStart=/usr/sbin/dovecot -c /data/conf/dovecot/dovecot.conf
+ PIDFile=/var/run/dovecot/master.pid
+ ExecReload=/usr/bin/doveadm reload
+ ExecStop=/usr/bin/doveadm stop
