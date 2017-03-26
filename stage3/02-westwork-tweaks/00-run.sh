@@ -29,7 +29,15 @@ install -m 644 files/dovecot-90-sieve.conf   ${ROOTFS_DIR}/data/conf/dovecot/con
 install -m 644 files/dovecot-auth-ldap.conf.ext   ${ROOTFS_DIR}/data/conf/dovecot/
 install -m 644 files/dovecot-ldap.conf.ext.mustache   ${ROOTFS_DIR}/data/conf/dovecot/
 
+# Install synapse config files
+install -m 644 files/matrix-homeserver.yaml  ${ROOTFS_DIR}/data/conf/matrix-synapse/homeserver.yaml
 
+# Install nginx config template
+install -m 644 files/nginx-site.mustache    ${ROOTFS_DIR}/data/conf/nginx/sites-available/
+
+# Install postfix config files
+install -m 644 files/postfix-ldap-aliases.cf.mustache   ${ROOTFS_DIR}/data/conf/postfix/ldap-aliases.cf.mustache
+install -m 644 files/postfix-main.cf.mustache           ${ROOTFS_DIR}/data/conf/postfix/main.cf.mustache
 
 
 
