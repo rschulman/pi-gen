@@ -1,5 +1,5 @@
-rfkill hostapd hostapd-utils iw dnsmasq
-slapd openldap-utils
+rfkill hostapd iw dnsmasq
+slapd ldap-utils
 nginx php5-fpm php5
-dovecot-imapd dovecot-lmtpd dovecot-sieve dovecot-managedsieve dovecot-ldap
+dovecot-imapd dovecot-lmtpd dovecot-sieve dovecot-managesieved dovecot-ldap
 git-core rpi-update
