@@ -1,5 +1,6 @@
-# pi-gen
-_Tool used to create the raspberrypi.org Raspbian images_
+# westwork-gen
+_Tool used to create the Westwork Raspbian-based image_
+_This tool is based on the official [RPi-distro](https://github.com/RPi-Distro/pi-gen) generator_
 
 ### TODO
 1. Documentation
@@ -93,24 +94,12 @@ maintenance and allows for more easy customization.
    you were looking for something between truly minimal and Raspbian-lite,
    here's where you start trimming.
 
- - **Stage 3** - desktop system.  Here's where you get the full desktop system
-   with X11 and LXDE, web browsers, git for development, Raspbian custom UI
-   enhancements, etc.  This is a base desktop system, with some development
-   tools installed.
+ - **Stage 3** - westwork system. This is where most of the work happens of 
+   creating the Westwork system. This stage installs all of the serviecs that
+   will be needed to run the Westwork system as well as the `westwork` binary
+   itself. It also moves all of the important configuration files out of `/etc`
+   and into `/data/conf` to make backup and restore easier.
 
- - **Stage 4** - complete Raspbian system.  More development tools, an email
-   client, learning tools like Scratch, specialized packages like sonic-pi and
-   wolfram-engine, system documentation, office productivity, etc.  This is
-   the stage that installs all of the things that make Raspbian friendly to
-   new users.
-
-### Stage specification
-If you wish to build up to a specified stage (such as building up to stage 2 for a lite system), place an empty file named `SKIP` in each of the `./stage` directories you wish not to include.
-
-Then remove the `EXPORT*` files from `./stage4` (if building up to stage 2) or from `./stage2` (if building a minimal system).
-
-```
-# Example for building a lite system
-$ touch ./stage3/SKIP ./stage4/SKIP
-$ rm stage4/EXPORT*
-```
+   Some of the configuration files after this stage will be in `.mustache` form
+   and will be run through the template engine after the bootstrap process
+   is complete and the owner has picked a domain name.
