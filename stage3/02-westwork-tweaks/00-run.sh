@@ -16,6 +16,7 @@ mv -f ${ROOTFS_DIR}/etc/nginx                           ${ROOTFS_DIR}/data/conf/
 mv -f ${ROOTFS_DIR}/etc/postfix                         ${ROOTFS_DIR}/data/conf/
 mv -f ${ROOTFS_DIR}/etc/matrix-synapse                  ${ROOTFS_DIR}/data/conf/
 mv -f ${ROOTFS_DIR}/etc/letsencrypt                     ${ROOTFS_DIR}/data/conf/
+mv -f ${ROOTFS_DIR}/etc/hostapd                         ${ROOTFS_DIR}/data/conf/
 
 # Install dovecot config files
 install -m 644 files/dovecot.conf                       ${ROOTFS_DIR}/data/conf/dovecot/
@@ -39,5 +40,7 @@ install -m 644 files/nginx-site.mustache                ${ROOTFS_DIR}/data/conf/
 install -m 644 files/postfix-ldap-aliases.cf.mustache   ${ROOTFS_DIR}/data/conf/postfix/ldap-aliases.cf.mustache
 install -m 644 files/postfix-main.cf.mustache           ${ROOTFS_DIR}/data/conf/postfix/main.cf.mustache
 
-
+# Install westwork access point config files
+install -m 644 files/dnsmasq.conf                       ${ROOTFS_DIR}/data/conf/
+install -m 644 files/hostapd.conf                       ${ROOTFS_DIR}/data/conf/hostapd/
 
