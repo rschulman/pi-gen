@@ -11,6 +11,7 @@ find . -type f -exec chmod 644 {} \;
 chown -R www-data:www-data .
 
 # Relocate config files from /etc to /data/conf
+install -d                                              ${ROOTFS_DIR}/data/conf
 mv -f ${ROOTFS_DIR}/etc/dovecot                         ${ROOTFS_DIR}/data/conf/
 mv -f ${ROOTFS_DIR}/etc/nginx                           ${ROOTFS_DIR}/data/conf/
 mv -f ${ROOTFS_DIR}/etc/postfix                         ${ROOTFS_DIR}/data/conf/
