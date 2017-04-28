@@ -11,8 +11,10 @@ else
 fi
 
 on_chroot apt-key add - < files/raspberrypi.gpg.key
+on_chroot apt-key add - < files/debian.gpg.key
 on_chroot apt-key add - < files/matrix.gpg.key
 on_chroot << EOF
+apt-key update
 apt-get update
 apt-get dist-upgrade -y
 EOF
